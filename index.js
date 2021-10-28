@@ -70,6 +70,15 @@ function setSpinner(isLoading){
     }
 }
 
+function noValidMovie(){    
+    const container = document.getElementById("movie")
+    container.innerHTML = null;
+
+    const img = document.createElement('img');
+    img.src = './404.png';
+
+    container.append(img);
+}
 
 
 async function handleSearch(e){
@@ -87,7 +96,12 @@ async function handleSearch(e){
         }
 
         const movieResult = await fetchMovieDetails(query);
-        displayMovie(movieResult);
+
+        if ( movieResult.Title && movieResult.Title.toLowerCase() == query.toLowerCase()){
+            displayMovie(movieResult);
+        } else {
+            noValidMovie();
+        }
         
         setSpinner(false);
 
