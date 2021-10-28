@@ -54,11 +54,13 @@ input[type="button"]:hover{
     height: 350px;
     padding: 2%;
     box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 #movie-header {
     display: flex;
     justify-content: space-between;
     padding-right: 5%;
+    align-items: center;
 }
 #spinner {
     border: 10px solid gray;
@@ -82,4 +84,14 @@ input[type="button"]:hover{
 }
 .visible {
     display: block;
+}
+#recommended{
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 8px;
+    background-color: gold;
+    border-top-right-radius: 10px;
 }
